@@ -20,6 +20,8 @@ import com.github.musta.fantasydrawer.SimpleFantasyListener;
 import com.github.musta.fantasydrawer.Transformer;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
     private DrawerLayout drawerLayout;
 
     @Override
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         indicator.setColor(Color.WHITE);
         getSupportActionBar().setHomeAsUpIndicator(indicator);
 
-        setTransformer();
+//        setTransformer();
         // setListener();
         drawerLayout = findViewById(R.id.drawerLayout);
         drawerLayout.setScrimColor(Color.TRANSPARENT);
@@ -43,6 +45,33 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        }
+        return true;
+    }
+
+    public void onClick(View view) {
+        if (view instanceof TextView) {
+            TextView textView = (TextView) view;
+
+            String title = textView.getText().toString();
+            if (title.startsWith("星期")) {
+                Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
+            } else {
+                startActivity(UniversalActivity.newIntent(this, title));
+            }
+        } else if (view.getId() == R.id.userInfo) {
+            startActivity(UniversalActivity.newIntent(this, "个人中心"));
+        }
     }
 
     private void setListener() {
@@ -108,30 +137,5 @@ public class MainActivity extends AppCompatActivity {
                 translationX.start();
             }
         });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                drawerLayout.closeDrawer(GravityCompat.START);
-            } else {
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        }
-        return true;
-    }
-
-    public void onClick(View view) {
-        if (view instanceof TextView) {
-            String title = ((TextView) view).getText().toString();
-            if (title.startsWith("星期")) {
-                Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
-            } else {
-                startActivity(UniversalActivity.newIntent(this, title));
-            }
-        } else if (view.getId() == R.id.userInfo) {
-            startActivity(UniversalActivity.newIntent(this, "个人中心"));
-        }
     }
 }

@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class FantasyDrawerLayout extends DrawerLayout implements DrawerLayout.Dr
         addDrawerListener(this);
     }
 
-    public void openDrawer(View drawerView) {
+    public void openDrawer(@NonNull View drawerView) {
         super.openDrawer(drawerView);
         currentSideBar = (SideBarWithBg) drawerView;
     }
