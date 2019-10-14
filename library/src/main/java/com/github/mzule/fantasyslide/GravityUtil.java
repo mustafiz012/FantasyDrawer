@@ -1,8 +1,9 @@
 package com.github.mzule.fantasyslide;
 
-import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
+
+import androidx.drawerlayout.widget.DrawerLayout;
 
 /**
  * Created by CaoDongping on 9/7/16.
@@ -17,7 +18,7 @@ class GravityUtil {
         return isLeft(getGravity(view));
     }
 
-    static boolean isRight(int gravity) {
+    private static boolean isRight(int gravity) {
         return gravity == Gravity.END || gravity == Gravity.RIGHT;
     }
 

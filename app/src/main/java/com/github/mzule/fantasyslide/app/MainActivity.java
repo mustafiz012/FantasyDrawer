@@ -3,16 +3,17 @@ package com.github.mzule.fantasyslide.app;
 import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.github.mzule.fantasyslide.SideBar;
 import com.github.mzule.fantasyslide.SimpleFantasyListener;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTransformer();
         // setListener();
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        drawerLayout = findViewById(R.id.drawerLayout);
         drawerLayout.setScrimColor(Color.TRANSPARENT);
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
@@ -45,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setListener() {
-        final TextView tipView = (TextView) findViewById(R.id.tipView);
-        SideBar leftSideBar = (SideBar) findViewById(R.id.leftSideBar);
+        final TextView tipView = findViewById(R.id.tipView);
+        SideBar leftSideBar = findViewById(R.id.leftSideBar);
         leftSideBar.setFantasyListener(new SimpleFantasyListener() {
             @Override
             public boolean onHover(@Nullable View view, int index) {
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTransformer() {
         final float spacing = getResources().getDimensionPixelSize(R.dimen.spacing);
-        SideBar rightSideBar = (SideBar) findViewById(R.id.rightSideBar);
+        SideBar rightSideBar = findViewById(R.id.rightSideBar);
         rightSideBar.setTransformer(new Transformer() {
             private View lastHoverView;
 
