@@ -5,26 +5,26 @@
 <a href="http://www.methodscount.com/?lib=com.github.mzule.fantasyslide%3Alibrary%3A1.0.4"><img src="https://img.shields.io/badge/Methods and size-core: 142 | deps: 15054 | 24 KB-e91e63.svg"/></a>
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FantasySlide-green.svg?style=flat)](http://android-arsenal.com/details/1/4309)
 
-一个 DrawerLayout 的扩展,具有帅气的动画与创新的交互。一次手势完成滑出侧边栏与选择菜单。欢迎下载 demo 体验。
+一个 DrawerLayout The extension has a handsome animation and innovative interaction. A gesture completes the slide out of the sidebar and selects the menu. Welcome to download the demo experience.
 
 <https://raw.githubusercontent.com/mzule/FantasySlide/master/demo.apk>
 
-## 效果
+## effect
 
 ![](https://raw.githubusercontent.com/mzule/FantasySlide/master/sample.gif)
 
 
-## 使用方法
+## Instructions
 
-### 添加依赖
+### Add dependency
 
 ``` groovy
-compile 'com.github.mzule.fantasyslide:library:1.0.5'
+implementation 'com.github.mzule.fantasyslide:library:1.0.5'
 ```
 
-### 调用
+### transfer
 
-调用方法基本与 DrawerLayout 一致. 本项目支持左右 (start left end right) 侧边栏同时定义。
+The calling method is basically DrawerLayout Consistent. This project supports around (start left end right) Sidebar is defined at the same time
 
 ``` xml
 <com.github.mzule.fantasyslide.FantasyDrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -46,38 +46,37 @@ compile 'com.github.mzule.fantasyslide:library:1.0.5'
         android:background="@color/colorPrimary"
         app:maxTranslationX="66dp">
         
-        <!-- 这里是 SideBar 的子视图-->
+        <!-- Here is a subview of SideBar -->
         
     </com.github.mzule.fantasyslide.SideBar>
-    <!-- 如果需要的话，可以添加右侧边栏-->
+    <!-- If necessary, you can add the right sidebar -->
 </com.github.mzule.fantasyslide.FantasyDrawerLayout>
 
 ```
-
-1. 最外层的 FantasyDrawerLayout 的使用与官方的 DrawerLayout 完全一致。
-2. SideBar 用来包装每一个菜单项，SideBar 本质上可以当做一个 vertical 的 LinearLayout 来使用。
-3. 效果图上的文字变色是表示该菜单处于 hover 状态, hover 状态默认会设定 view 的 pressed 状态为 true。可以通过 Listener 来改写, 下文会有详细说明。
-4. 详细参考 <https://github.com/mzule/FantasySlide/blob/master/app/src/main/res/layout/activity_main.xml>
-
+1. The use of the outermost FantasyDrawerLayout is identical to the official DrawerLayout.
+2. SideBar is used to wrap every menu item, and SideBar can essentially be used as a vertical LinearLayout.
+3. The color change on the renderings indicates that the menu is in the hover state. By default, the hover state sets the pressed state of the view to true. It can be rewritten by Listener, which will be explained in detail below.
+4. Detailed reference <https://github.com/mustafiz012/FantasySlide/blob/master/app/src/main/res/layout/activity_main.xml>
 
 
-## 进阶
+
+## Advanced
 
 ### maxTranslationX
 
-通过设置 maxTranslationX 可以设置菜单项动画的最大位移。仅有在采用默认 Transformer 时才有效。
+The maximum displacement of the menu item animation can be set by setting maxTranslationX. Only valid when using the default Transformer.
 
 ``` xml
 <com.github.mzule.fantasyslide.SideBar
 	...
     app:maxTranslationX="88dp">
 ```
-一般情况下，左边的侧边栏 maxTranslationX 为正数，右边的侧边栏 maxTranslationX 为负数。
+In general, the left sidebar maxTranslationX is a positive number and the right sidebar maxTranslationX is a negative number.
 
 
 ### Listener
 
-支持设置 Listener 来监听侧边栏菜单的状态。
+Support for setting the Listener to monitor the state of the sidebar menu.
 
 ``` java
 SideBar leftSideBar = (SideBar) findViewById(R.id.leftSideBar);
@@ -98,13 +97,13 @@ leftSideBar.setFantasyListener(new SimpleFantasyListener() {
 });
 ```
 
-1. Hover 是指上面效果图中，高亮的状态，此时手指仍在屏幕上 move. 默认的 hover 处理逻辑是设置 view 的 pressed 状态为 true. 重写 onHover(View) 方法返回 true 可以改写默认逻辑。
-2. Select 是指 hover 状态时手指离开屏幕，触发 select 状态。默认的处理逻辑是调用 view 的 onClick 事件。重写 onSelect(View) 方法返回 true 可以改写默认逻辑。
-3. Cancel 是指手指离开屏幕时，没有任何 view 触发 select 状态，则为 cancel，无默认处理逻辑。
+1. Hover refers to the highlighted state in the above effect diagram. At this time, the finger is still on the screen. The default hover processing logic is to set the pressed state of the view to true. Rewriting the onHover(View) method returns true to override the default. logic.
+2. Select refers to the finger off the screen when the hover state triggers the select state. The default processing logic is to call the view's onClick event. Overriding the onSelect(View) method returns true to override the default logic.
+3. Cancel means that when the finger leaves the screen, if there is no view to trigger the select state, it is cancel, there is no default processing logic.
 
 ### Transformer
 
-项目设计了一个 Transformer 接口，供调用者自定义菜单项的动画效果。使用方法类似于 ViewPager 的 PageTransformer.
+The project designed a Transformer interface for the caller to customize the animation of the menu items. The method is similar to PageTransformer of ViewPager.
 
 ``` java
 class DefaultTransformer implements Transformer {
@@ -130,21 +129,19 @@ class DefaultTransformer implements Transformer {
 }
 ```
 
-## 感谢
+## thank
 
-动画效果参考自 dribbble. <https://dribbble.com/shots/2269140-Force-Touch-Slide-Menu> 在此感谢。
+Animation effect reference dribbble. <https://dribbble.com/shots/2269140-Force-Touch-Slide-Menu> Thank you very much.
 
-另外，demo 里面 MainActivity 的右边栏实现了类似原作的菜单动画效果。具体可以参考相关代码。
+In addition, the right side of the MainActivity in the demo implements a menu animation similar to the original. For details, please refer to the relevant code.
 
-## 许可
+## license
 
 Apache License  2.0
 
-## 联系我
+## contact me
 
-任何相关问题都可以通过以下方式联系我。
+Any related questions can be contacted by me in the following ways.
 
-1. 提 issue
-1. 新浪微博 http://weibo.com/mzule
-1. 个人博客 https://mzule.github.io/
-1. 邮件 "mzule".concat("4j").concat("@").concat("gmail.com")
+Issue
+1. Mail "mustafiz".concat("012").concat("@").concat("outlook.com")
