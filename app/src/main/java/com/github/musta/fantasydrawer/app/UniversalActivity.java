@@ -1,4 +1,4 @@
-package com.github.mzule.fantasyslide.app;
+package com.github.musta.fantasydrawer.app;
 
 import android.content.Context;
 import android.content.Intent;

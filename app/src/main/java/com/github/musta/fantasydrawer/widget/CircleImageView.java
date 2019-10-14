@@ -1,10 +1,10 @@
-package com.github.mzule.fantasyslide.widget;
+package com.github.musta.fantasydrawer.widget;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
 
-import com.github.mzule.fantasyslide.app.R;
+import com.github.musta.fantasydrawer.app.R;
 
 /**
  * Created by CaoDongping on 9/6/16.

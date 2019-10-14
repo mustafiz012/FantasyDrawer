@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.mzule.fantasyslide.app">
+    package="com.github.musta.fantasydrawer.app">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.github.mzule.fantasyslide.app.MainActivity"
+            android:name="com.github.musta.fantasydrawer.app.MainActivity"
             android:label="首页">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.github.mzule.fantasyslide.app.UniversalActivity"
+            android:name="com.github.musta.fantasydrawer.app.UniversalActivity"
             android:theme="@style/UniversalTheme" />
     </application>
 

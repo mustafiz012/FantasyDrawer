@@ -1,4 +1,4 @@
-package com.github.mzule.fantasyslide;
+package com.github.musta.fantasydrawer;
 
 import android.view.Gravity;
 import android.view.View;

@@ -1,8 +1,8 @@
-# FantasySlide
+# FantasyDrawer
 
 [![DOWNLOAD](https://api.bintray.com/packages/mzule/maven/fantasy-slide/images/download.svg)](https://bintray.com/mzule/maven/fantasy-slide/_latestVersion)
 [![API](https://img.shields.io/badge/API-15%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=15)
-<a href="http://www.methodscount.com/?lib=com.github.mzule.fantasyslide%3Alibrary%3A1.0.4"><img src="https://img.shields.io/badge/Methods and size-core: 142 | deps: 15054 | 24 KB-e91e63.svg"/></a>
+<a href="http://www.methodscount.com/?lib=com.github.musta.fantasydrawer%3Alibrary%3A1.0.4"><img src="https://img.shields.io/badge/Methods and size-core: 142 | deps: 15054 | 24 KB-e91e63.svg"/></a>
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FantasySlide-green.svg?style=flat)](http://android-arsenal.com/details/1/4309)
 
 一个 DrawerLayout The extension has a handsome animation and innovative interaction. A gesture completes the slide out of the sidebar and selects the menu. Welcome to download the demo experience.
@@ -19,7 +19,7 @@
 ### Add dependency
 
 ``` groovy
-implementation 'com.github.mzule.fantasyslide:library:1.0.5'
+implementation 'com.github.musta.fantasydrawer:library:1.0.5'
 ```
 
 ### transfer
@@ -27,7 +27,7 @@ implementation 'com.github.mzule.fantasyslide:library:1.0.5'
 The calling method is basically DrawerLayout Consistent. This project supports around (start left end right) Sidebar is defined at the same time
 
 ``` xml
-<com.github.mzule.fantasyslide.FantasyDrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.github.musta.fantasydrawer.FantasyDrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -38,7 +38,7 @@ The calling method is basically DrawerLayout Consistent. This project supports a
         android:scaleType="centerCrop"
         android:src="@drawable/fake" />
 
-    <com.github.mzule.fantasyslide.SideBar
+    <com.github.musta.fantasydrawer.SideBar
         android:id="@+id/leftSideBar"
         android:layout_width="200dp"
         android:layout_height="match_parent"
@@ -48,15 +48,15 @@ The calling method is basically DrawerLayout Consistent. This project supports a
         
         <!-- Here is a subview of SideBar -->
         
-    </com.github.mzule.fantasyslide.SideBar>
+    </com.github.musta.fantasydrawer.SideBar>
     <!-- If necessary, you can add the right sidebar -->
-</com.github.mzule.fantasyslide.FantasyDrawerLayout>
+</com.github.musta.fantasydrawer.FantasyDrawerLayout>
 
 ```
 1. The use of the outermost FantasyDrawerLayout is identical to the official DrawerLayout.
 2. SideBar is used to wrap every menu item, and SideBar can essentially be used as a vertical LinearLayout.
 3. The color change on the renderings indicates that the menu is in the hover state. By default, the hover state sets the pressed state of the view to true. It can be rewritten by Listener, which will be explained in detail below.
-4. Detailed reference <https://github.com/mustafiz012/FantasySlide/blob/master/app/src/main/res/layout/activity_main.xml>
+4. Detailed reference <https://github.com/mustafiz012/FantasyDrawer/blob/master/app/src/main/res/layout/activity_main.xml>
 
 
 
@@ -67,7 +67,7 @@ The calling method is basically DrawerLayout Consistent. This project supports a
 The maximum displacement of the menu item animation can be set by setting maxTranslationX. Only valid when using the default Transformer.
 
 ``` xml
-<com.github.mzule.fantasyslide.SideBar
+<com.github.musta.fantasydrawer.SideBar
 	...
     app:maxTranslationX="88dp">
 ```

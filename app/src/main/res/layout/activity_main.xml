@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.mzule.fantasyslide.FantasyDrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.github.musta.fantasydrawer.FantasyDrawerLayout
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,7 +15,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/fake" />
 
-        <com.github.mzule.fantasyslide.SideBar
+        <com.github.musta.fantasydrawer.SideBar
             android:id="@+id/leftSideBar"
             android:layout_width="200dp"
             android:layout_height="match_parent"
@@ -32,7 +33,7 @@
                 android:onClick="onClick"
                 android:orientation="vertical">
 
-                <com.github.mzule.fantasyslide.widget.CircleImageView
+                <com.github.musta.fantasydrawer.widget.CircleImageView
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_margin="10dp"
@@ -43,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mzule"
+                    android:text="mustafiz012"
                     android:textColor="@color/menu_text_color"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -72,9 +73,9 @@
                 style="@style/MenuText"
                 android:drawableLeft="@drawable/settings"
                 android:text="设置" />
-        </com.github.mzule.fantasyslide.SideBar>
+        </com.github.musta.fantasydrawer.SideBar>
 
-        <com.github.mzule.fantasyslide.SideBar
+        <com.github.musta.fantasydrawer.SideBar
             android:id="@+id/rightSideBar"
             android:layout_width="133dp"
             android:layout_height="match_parent"
@@ -110,8 +111,8 @@
             <TextView
                 style="@style/MenuText"
                 android:text="星期日" />
-        </com.github.mzule.fantasyslide.SideBar>
-    </com.github.mzule.fantasyslide.FantasyDrawerLayout>
+        </com.github.musta.fantasydrawer.SideBar>
+    </com.github.musta.fantasydrawer.FantasyDrawerLayout>
 
     <TextView
         android:id="@+id/tipView"

@@ -2,22 +2,22 @@ apply plugin: 'com.android.library'
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'fantasy-slide'
+    bintrayName = 'fantasy-drawer'
 
-    publishedGroupId = 'com.github.mzule.fantasyslide'
-    libraryName = 'FantasySlide'
+    publishedGroupId = 'com.github.musta.fantasydrawer'
+    libraryName = 'FantasyDrawer'
     artifact = 'library'
 
-    libraryDescription = 'FantasySlide'
+    libraryDescription = 'FantasyDrawer'
 
-    siteUrl = 'https://github.com/mzule/FantasySlide/'
-    gitUrl = 'https://github.com/mzule/FantasySlide.git'
+    siteUrl = 'https://github.com/mustafiz012/FantasyDrawer/'
+    gitUrl = 'https://github.com/mustafiz012/FantasyDrawer.git'
 
     libraryVersion = '1.0.5'
 
-    developerId = 'mzule'
-    developerName = 'Cao Dongping'
-    developerEmail = 'mzule4j@gmail.com'
+    developerId = 'mustafiz012'
+    developerName = 'Md. Mustafizur Rahman'
+    developerEmail = 'mustafiz012@outlook.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'

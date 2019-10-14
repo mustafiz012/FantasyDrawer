@@ -1,4 +1,4 @@
-package com.github.mzule.fantasyslide.app;
+package com.github.musta.fantasydrawer.app;
 
 import android.animation.ObjectAnimator;
 import android.graphics.Color;
@@ -15,9 +15,9 @@ import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.github.mzule.fantasyslide.SideBar;
-import com.github.mzule.fantasyslide.SimpleFantasyListener;
-import com.github.mzule.fantasyslide.Transformer;
+import com.github.musta.fantasydrawer.SideBar;
+import com.github.musta.fantasydrawer.SimpleFantasyListener;
+import com.github.musta.fantasydrawer.Transformer;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
